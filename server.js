@@ -10,6 +10,8 @@ const typeDefs = require('./apollo/typeDefs');
 const resolvers = require('./apollo/resolvers');
 const mongoose = require('mongoose');
 
+const PORT = process.env.port || 4000 ;
+
 const server = new ApolloServer({ typeDefs, resolvers, cors: {
     origin: 'http://localhost:3000',
     credentials: true
@@ -19,7 +21,7 @@ const server = new ApolloServer({ typeDefs, resolvers, cors: {
 mongoose.connect(process.env.MONGDB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     console.log('Mongo DB connected')
-    return server.listen({ port: process.env.PORT || 4000 });
+    return server.listen({port: PORT});
 })
 .then(({ url }) => {
     console.log(`Server ready at ${url} 🚀`);
