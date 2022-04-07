@@ -6,9 +6,7 @@ const resolvers = require('./apollo/resolvers');
 const mongoose = require('mongoose');
 
 const server = new ApolloServer({ typeDefs, resolvers, cors: {
-    origin: '*',
-    allowedHeaders: ['Access-Control-Allow-Origin'],
-    credentials: true
+    origin: '*',   
 } });
 
 const PORT = process.env.PORT || 4000;
