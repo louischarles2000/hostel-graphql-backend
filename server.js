@@ -21,7 +21,7 @@ const server = new ApolloServer({ typeDefs, resolvers, cors: {
 mongoose.connect('mongodb+srv://campuseyeadmin1:NGVIbHaCU2QEy72j@cluster0.vav4m.mongodb.net/hostels', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     console.log('Mongo DB connected')
-    return server.listen({port: PORT});
+    return server.listen(PORT);
 })
 .then(({ url }) => {
     console.log(`Server ready at ${url} 🚀`);
