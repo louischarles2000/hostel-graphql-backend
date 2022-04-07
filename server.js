@@ -10,7 +10,7 @@ const server = new ApolloServer({ typeDefs, resolvers, cors: {
     credentials: true
 } });
 
-const PORT = process.env.port || 4000;
+const PORT = process.env.PORT || 4000;
 
 mongoose.connect('mongodb+srv://campuseyeadmin1:NGVIbHaCU2QEy72j@cluster0.vav4m.mongodb.net/hostels', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
