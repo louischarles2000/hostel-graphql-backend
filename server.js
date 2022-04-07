@@ -6,7 +6,8 @@ const resolvers = require('./apollo/resolvers');
 const mongoose = require('mongoose');
 
 const server = new ApolloServer({ typeDefs, resolvers, cors: {
-    origin: 'https://campuseyeportal.netlify.app/',
+    origin: 'https://campuseyeportal.netlify.app',
+    allowedHeaders: ['Access-Control-Allow-Origin'],
     credentials: true
 } });
 
